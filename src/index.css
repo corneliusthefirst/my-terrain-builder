@@ -3,12 +3,10 @@
 @tailwind utilities;
 
 @layer components {
-  .container {
-    @apply max-w-6xl  px-2 sm:px-4 lg:px-6;
-  }
 
   .app-background {
-    background-image: linear-gradient(to right, #fc5c7d,#7851A9, #6a82fb);
+    background: linear-gradient(to right, #f9f9f9, #e9cdf8, #f9f9f9);
     overflow-y: scroll;
+    opacity: 0.8
   }
 }
