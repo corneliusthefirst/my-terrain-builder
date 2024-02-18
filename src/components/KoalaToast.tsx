@@ -1,9 +1,8 @@
 import React from "react"
 import { Slide, toast, ToastTransition } from "react-toastify"
 import "react-toastify/dist/ReactToastify.css"
-import { ReactNode } from "react"
-import CheckIconOutline from "./icons/checkicon-outline"
-import ErrorIcon from "./icons/error-icon"
+import CheckIconOutline from "./Icons/checkicon-outline"
+import ErrorIcon from "./Icons/error-icon"
 
 interface ToastProps {
   openTaost: () => void
