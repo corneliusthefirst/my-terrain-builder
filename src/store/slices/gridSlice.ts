@@ -23,6 +23,10 @@ const initialState: GridState = {
   historyCurrentIndex: -1,
   isViewingHistory: false,
   currentTile: null,
+  useDragAndDrop: true,
+  isDragging: false,
+  isDraggingElement: false,
+  
 }
 
 export const gridSlice = createSlice({
@@ -33,7 +37,7 @@ export const gridSlice = createSlice({
       // If the grid doesn't have a history, initialize it else keep the current persisted state
       if (state.history.length === 0) {
         const grid = state.grid.map((tile) => {
-          const active = Math.random() < 0.05
+          const active = Math.random() < 0.1
           return {
             ...tile,
             label: active ? TileLabel.Rock : TileLabel.Grass,
@@ -109,7 +113,6 @@ export const gridSlice = createSlice({
         state.isViewingHistory = false
       }
       state.selectedElement = action.payload
-      state.currentTile = null
     },
 
     setCurrentTile: (state, action: PayloadAction<SetCurrentTile>) => {
@@ -192,6 +195,27 @@ export const gridSlice = createSlice({
       state.grid[tileIndex].label = TileLabel.Grass
       state.grid[tileIndex].active = false
     },
+   toogleSwitch: (state) => {
+      state.useDragAndDrop = !state.useDragAndDrop
+    },
+    setIsDragging: (state, action: PayloadAction<boolean>) => {
+      state.isDragging = action.payload
+    },
+    setIsDraggingElement: (state, action: PayloadAction<boolean>) => {
+      state.isDraggingElement = action.payload
+    },
+    resetStore: (state) => {
+      state.grid = initGrid()
+      state.initialGrid = null
+      state.credit = 100
+      state.selectedElement = null
+      state.history = []
+      state.historyCurrentIndex = -1
+      state.isViewingHistory = false
+      state.currentTile = null
+      state.useDragAndDrop = true
+      state.isDragging = false
+    }
   },
 })
 
@@ -207,6 +231,10 @@ export const {
   previousAction,
   nextAction,
   removeCurrentTile,
+  toogleSwitch,
+  setIsDragging,
+  resetStore,
+  setIsDraggingElement
 } = gridSlice.actions
 
 // Export Async action creators

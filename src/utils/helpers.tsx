@@ -61,6 +61,14 @@ export const tileBackground = {
   [TileLabel.Grass]: "bg-gradient grass",
 }
 
+export const tileBackgroundHexBolors = {
+  [TileLabel.Water]: "#0998e0",
+  [TileLabel.Rock]: "#5a626b",
+  [TileLabel.House]: "#f09090",
+  [TileLabel.Grass]: "#9AE6B4",
+
+}
+
 export const getPosition = (index: number) => {
   return `(${Math.floor(index / 10)}, ${index % 10})`
 }

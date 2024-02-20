@@ -1,38 +1,44 @@
 import React from "react"
-import { useAppDispatch } from "../../hooks/useAppDispatch"
-import { setSelectedElement } from "../../store/slices/gridSlice"
 import { TileLabel } from "../../types"
 import { getTileIcon } from "../../utils/helpers"
+import { useElementHandler } from "../../hooks/useElementHandler"
+
+interface ElementBlockProps extends React.HTMLAttributes<HTMLButtonElement> {
+  label: TileLabel
+}
+
+const ElementBlock: React.FC<ElementBlockProps> = ({ label, className }) => {
+  const { handleSelectElement, useDragAndDrop, dragElementRef } =
+    useElementHandler(label)
+  return (
+    <button
+      ref={dragElementRef}
+      className={`${className} bg-gradient flex items-center justify-center  py-3 px-4 md:py-5 md:px-5 lg:py-3 lg:px-4 rounded transition duration-200 shadow-md`}
+      onClick={() => !useDragAndDrop && handleSelectElement()}
+    >
+      {getTileIcon(label)}
+    </button>
+  )
+}
 
 export const ElementsBlock = () => {
-  const dispatch = useAppDispatch()
-  const handleSelectElement = (element: TileLabel) => {
-    dispatch(setSelectedElement(element))
-  }
-
   return (
-    <div className="my-4 md:my-6 lg:my-0 md:px-32 lg:px-0">
-      <div className="flex justify-around items-center p-4">
-        <button
-          className="bg-gradient water flex items-center justify-center  py-2 px-6 rounded transition duration-200 shadow-md"
-          onClick={() => handleSelectElement(TileLabel.Water)}
-        >
-          {getTileIcon(TileLabel.Water)}
-        </button>
+    <div className="my-4 px-8 md:my-5 lg:my-0 md:px-32 lg:px-0">
+      <div className="flex justify-around items-center py-4">
+        <ElementBlock
+          className="water"
+          label={TileLabel.Water}
+        />
 
-        <button
-          className="bg-gradient mx-2 rock flex items-center justify-center py-2 px-6 rounded transition duration-200 shadow-md lg:mx-8"
-          onClick={() => handleSelectElement(TileLabel.Rock)}
-        >
-          {getTileIcon(TileLabel.Rock)}
-        </button>
+        <ElementBlock
+          className="mx-2 rock lg:mx-8"
+          label={TileLabel.Rock}
+        />
 
-        <button
-          className="bg-gradient house flex items-center justify-center py-2 px-6 rounded transition duration-200 shadow-md"
-          onClick={() => handleSelectElement(TileLabel.House)}
-        >
-          {getTileIcon(TileLabel.House)}
-        </button>
+        <ElementBlock
+          className="house"
+          label={TileLabel.House}
+        />
       </div>
     </div>
   )

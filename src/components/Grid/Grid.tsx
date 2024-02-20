@@ -3,8 +3,7 @@ import { useAppDispatch } from "../../hooks/useAppDispatch"
 import { useAppSelector } from "../../hooks/useAppSelector"
 import { selectActiveGrid } from "../../store/selectors"
 import { initializeGrid } from "../../store/slices/gridSlice"
-import TileBlock from "./TileBlock"
-import { useTileClickHandler } from "../../hooks/useTileClickHandler"
+import GridItem from "./GridItem"
 import { Tile } from "../../types"
 
 
@@ -12,7 +11,6 @@ import { Tile } from "../../types"
 export const Grid: React.FC = () => {
   const dispatch = useAppDispatch()
   const grid: Tile[] = useAppSelector(selectActiveGrid) || []
-  const {handleTileClick} = useTileClickHandler()
 
   useEffect(() => {
     dispatch(initializeGrid())
@@ -26,11 +24,11 @@ export const Grid: React.FC = () => {
       >
         {grid.map((tile, index) => {
           return (
-            <TileBlock
+            <GridItem
               key={`${tile.label}-${index}`}
               label={tile.label}
               tileIndex={index}
-              onClick={() => handleTileClick(index, tile)}
+              tile={tile}
             />
           )
         })}

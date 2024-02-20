@@ -18,13 +18,13 @@ export const History = () => {
 
   return (
     <Accordion title="History">
-        <ul className="space-y-2 animate-slideIn lg:text-left 2xs:text-center">
+        <ul className={`space-y-2 animate-slideIn lg:text-left 2xs:text-center`}>
           {historyList?.map((history, index) => {
             const active = index === currentHistoryIndex
 
             return (
               <li
-                key={history.message.replace(/\s+/g, "-")}
+                key={history.message.replace(/\s+/g, "-")+index}
                 className={`text-purple-700 text-sm p-2 cursor-pointer rounded ${
                   active ? "bg-gradient-to-r from-blue-100 via-gray-300 to-orange-200" : "hover:bg-gray-100"
                 }`}

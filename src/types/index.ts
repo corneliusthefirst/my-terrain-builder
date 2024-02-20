@@ -33,6 +33,9 @@ export interface GridState {
   historyCurrentIndex: number;
   isViewingHistory: boolean;
   currentTile: CurrentTile | null;
+  useDragAndDrop: boolean;
+  isDragging: boolean;
+  isDraggingElement: boolean;
 }
 
 export interface PlaceBlock {
@@ -44,4 +47,19 @@ export interface PlaceBlock {
 export interface SetCurrentTile {
     tileIndex: number;
     gridElement: Tile;
+}
+
+
+export enum DragItemTypes  {
+  GridItem =  'GRID_ITEM',
+  selectedElement = 'SELECTED_ELEMENT'
+}
+
+export interface DragItem {
+  tileIndex: number;
+}
+
+
+export interface DragElement {
+  label: TileLabel;
 }

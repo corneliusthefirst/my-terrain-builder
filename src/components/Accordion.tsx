@@ -12,7 +12,7 @@ const Accordion: React.FC<AccordionProps> = ({ title, children }) => {
   }
 
   return (
-    <div className="border shadow rounded-md overflow-hidden">
+    <div className="border shadow rounded-md overflow-hidden my-4 md:my-0">
       <button
         className="flex justify-between items-center px-4 py-2 bg-transparent text-gray-800 w-full"
         onClick={toggleAccordion}
@@ -25,8 +25,7 @@ const Accordion: React.FC<AccordionProps> = ({ title, children }) => {
         </span>
       </button>
       <div
-        className={`overflow-scroll transition-max-height duration-300 ${isOpen ? "max-h-96" : "max-h-0"}`}
-        style={{ maxHeight: isOpen ? "none" : 0 }}
+        className={`overflow-scroll transition-max-height duration-300 ${isOpen ? "max-h-[320px] md:max-h-[520px]" : "max-h-0"}`}
       >
         <div className="px-4 py-2">{children}</div>
       </div>

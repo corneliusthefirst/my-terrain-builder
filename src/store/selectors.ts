@@ -9,4 +9,6 @@ export const selectCurrentCredit = (state: RootState) => {
 }
 export const selectSelectedElement = (state: RootState) => state.selectedElement
 export const selectCurrentTile = (state: RootState) => state.currentTile
-
+export const selectUseDragAndDrop = (state: RootState) => state.useDragAndDrop
+export const selectIsDragging = (state: RootState) => state.isDragging
+export const selectIsDraggingElement = (state: RootState) => state.isDraggingElement

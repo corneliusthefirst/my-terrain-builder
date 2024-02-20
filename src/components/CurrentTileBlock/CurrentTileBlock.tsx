@@ -51,7 +51,7 @@ export const CurrentTileBlock: React.FC = () => {
         } bg-gradient-to-r from-gray-100 via-purple-100 to-purple-300  rounded-lg shadow-md py-4 text-center  mb-4`}
       >
         <div className="mb-3">
-          <h2 className="font-semibold bg-gradient-to-r from-gray-500 via-purple-500 to-green-500 inline-block text-transparent bg-clip-text text-xl mb-3">
+          <h2 className="font-semibold bg-gradient-to-r from-purple-500 to-green-500 inline-block text-transparent bg-clip-text text-xl mb-3">
             Current Tile
           </h2>
           <div className="flex flex-row mb-3 justify-center items-center">
