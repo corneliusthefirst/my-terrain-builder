@@ -1,14 +1,17 @@
-export enum Tile {
+export enum TileLabel {
     Grass = "Grass",
     Water = "Water",
     Rock = "Rock",
     House = "House",
 }
 
-export type GridElement = "Grass" | "Water" | "Rock" | "House";
+export interface Tile {
+    label: TileLabel;
+    active: boolean;
+}
 
 export interface HistoryItem {
-    grid: GridElement[];
+    grid: Tile[];
     credit: number;
     message: string;
     tileIndex: number;
@@ -16,29 +19,29 @@ export interface HistoryItem {
   
   export interface CurrentTile {
     tileIndex: number;
-    type: GridElement;
+    label: TileLabel;
     creditChange: string | null;
   }
   
 
 export interface GridState {
-  grid: GridElement[];
+  grid: Tile[];
+  initialGrid: Tile[] | null;
   credit: number;
-  selectedElement: GridElement | null;
+  selectedElement: TileLabel | null;
   history: HistoryItem[];
   historyCurrentIndex: number;
   isViewingHistory: boolean;
   currentTile: CurrentTile | null;
-  errorMessage: string | null
 }
 
 export interface PlaceBlock {
     tileIndex: number;
-    gridElement: GridElement;
+    gridElement: Tile;
 }
 
 
 export interface SetCurrentTile {
     tileIndex: number;
-    type: GridElement
+    gridElement: Tile;
 }

@@ -4,17 +4,6 @@ import "react-toastify/dist/ReactToastify.css"
 import CheckIconOutline from "./Icons/checkicon-outline"
 import ErrorIcon from "./Icons/error-icon"
 
-interface ToastProps {
-  openTaost: () => void
-}
-export default function Toast({ openTaost }: ToastProps) {
-  return (
-    <button onClick={openTaost} type="button">
-      show toast
-    </button>
-  )
-}
-
 interface koalaToastProps {
   message?: string
   type: "warning" | "success" | "danger" | "primary"

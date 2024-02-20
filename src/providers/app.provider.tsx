@@ -2,8 +2,8 @@ import React, { useMemo } from "react"
 import { ToastContainer } from "react-toastify"
 import Layout from "../components/Layout"
 import { Provider } from "react-redux"
-import { persistor, store } from "../store/index"
-import { PersistGate } from "redux-persist/integration/react"
+import { persistor, store } from "../store"
+import { PersistGate } from 'redux-persist/integration/react'
 
 export default function AppProvider({
   children,

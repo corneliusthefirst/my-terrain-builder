@@ -4,7 +4,7 @@ export default function CheckIconOutline({
   viewBox,
   width = 18,
   height = 18,
-  fill = 'black',
+  fill = '#33363F',
   ...props
 }: IconPropsType) {
   return (

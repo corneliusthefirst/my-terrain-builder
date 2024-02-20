@@ -1,5 +1,5 @@
-import {combineReducers, configureStore} from '@reduxjs/toolkit';
-import {gridReducer} from './slices/gridSlice';
+
+import { configureStore } from '@reduxjs/toolkit'
 import {
   persistStore,
   persistReducer,
@@ -9,31 +9,30 @@ import {
   PERSIST,
   PURGE,
   REGISTER,
-} from 'redux-persist';
-import storage from 'redux-persist/lib/storage';
-
-const rootReducer = combineReducers({
-  grid: gridReducer,
-});
+} from 'redux-persist'
+import storage from 'redux-persist/lib/storage'
+import {gridReducer} from "./slices/gridSlice"
+import { arrayTransform } from '../utils/helpers'
 
 const persistConfig = {
   key: 'root',
   storage,
-};
+  transforms: [arrayTransform]
+}
 
-const persistedReducer = persistReducer(persistConfig, rootReducer);
+const persistedReducer = persistReducer(persistConfig, gridReducer)
 
 export const store = configureStore({
   reducer: persistedReducer,
-  middleware: getDefaultMiddleware =>
+  middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({
       serializableCheck: {
         ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
       },
     }),
-});
+})
 
-export type RootState = ReturnType<typeof store.getState>;
-export type AppDispatch = typeof store.dispatch;
+export let persistor = persistStore(store);
 
-export const persistor = persistStore(store);
+export type RootState = ReturnType<typeof store.getState>
+export type AppDispatch = typeof store.dispatch

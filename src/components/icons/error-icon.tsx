@@ -4,7 +4,7 @@ export default function ErrorIcon({
   viewBox,
   width = 20,
   height = 20,
-  fill = 'black',
+  fill = '#33363F',
   ...props
 }: IconPropsType) {
   return (
