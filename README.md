@@ -1,3 +1,25 @@
+
+# terrain builder App
+
+Terrain Builder App complete with:
+
+- Possibility to activate or not the drag and drop functionality through the switch button
+- drag and drop to place or remove items
+- normal click to place and click to delete current tile
+- view of history and possibility to view that grid state
+- reset button to reset back the board
+- undo and redo functionality
+
+## Screenshots
+
+![DefaultApp](screenshots/defaultApp.png)
+![Drag And Drop To PlaceItem](screenshots/dragAndDropToPlaceItem.png)
+![Drag And Drop To Delete](screenshots/dragAndDropToDelete.png)
+
+- Start frontend :
+- Install pakages `yarn install`  then run  `yarn dev`
+
+
 # koala-test-front-js
 
 Bienvenue sur le test technique JS/TS de Koala !
