@@ -69,16 +69,16 @@ export const gridSlice = createSlice({
         const { credit, grid } = state.history[state.historyCurrentIndex - 1]
         state.credit = credit
         state.grid = grid
+        state.historyCurrentIndex--
       } else {
         state.credit = 100
         state.grid = state.initialGrid || initGrid()
       }
       state.currentTile = null
-      state.historyCurrentIndex--
     },
 
     nextAction: (state) => {
-      if (state.historyCurrentIndex < state.history.length - 1) {
+      if (state.historyCurrentIndex < (state.history.length - 1)) {
         const { credit, grid } = state.history[state.historyCurrentIndex + 1]
         state.grid = grid
         state.credit = credit
