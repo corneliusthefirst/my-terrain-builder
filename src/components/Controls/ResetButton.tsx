@@ -17,7 +17,10 @@ export const ResetButton = () => {
       text-white font-bold  p-0.5 rounded-xl
    `}
     >
-     <div className="flex justify-center items-center app-background px-4 py-2 rounded-xl">      <p className="text-purple-800 text-xs">Reset</p></div>
+      <div className="flex justify-center items-center app-background px-4 py-2 rounded-xl">
+        {" "}
+        <p className="text-purple-800 text-xs">Reset</p>
+      </div>
     </div>
   )
 }
