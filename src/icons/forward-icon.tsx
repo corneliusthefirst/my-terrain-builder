@@ -1,6 +1,6 @@
-import { IconPropsType } from "../../types/icon.type"
+import { IconPropsType } from "../types/icon.type"
 
-export default function BackIcon({
+export default function ForwardIcon({
   viewBox,
   width = 24,
   height = 24,
@@ -15,6 +15,7 @@ export default function BackIcon({
       viewBox="0 0 48 48"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
+      transform="rotate(0)matrix(-1, 0, 0, 1, 0, 0)"
     >
       <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
       <g

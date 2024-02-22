@@ -4,7 +4,7 @@ import { useAppSelector } from "../../hooks/useAppSelector"
 import { selectCurrentTile } from "../../store/selectors"
 import { getPosition, tileBackground } from "../../utils/helpers"
 import { CurrentTile, TileLabel } from "../../types"
-import NotPermittedIcon from "../Icons/not-permitted-icon"
+import NotPermittedIcon from "../../icons/not-permitted-icon"
 import { removeBlockAndUpdateHistoryAsync } from "../../store/slices/gridSlice"
 
 export const CurrentTileBlock: React.FC = () => {

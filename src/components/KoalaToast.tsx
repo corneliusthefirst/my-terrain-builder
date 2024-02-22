@@ -1,8 +1,8 @@
 import React from "react"
 import { Slide, toast, ToastTransition } from "react-toastify"
 import "react-toastify/dist/ReactToastify.css"
-import CheckIconOutline from "./Icons/checkicon-outline"
-import ErrorIcon from "./Icons/error-icon"
+import CheckIconOutline from "../icons/checkicon-outline"
+import ErrorIcon from "../icons/error-icon"
 
 interface koalaToastProps {
   message?: string
