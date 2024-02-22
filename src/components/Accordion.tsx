@@ -1,5 +1,5 @@
 import React, { useRef, useState } from "react"
-import UpIcon from "./Icons/up-icon"
+import UpIcon from "../icons/up-icon"
 interface AccordionProps {
   title: string
   children: React.ReactNode

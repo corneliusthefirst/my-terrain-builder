@@ -1,8 +1,8 @@
 import { SetCurrentTile, Tile, TileLabel } from "../types"
-import WaterIcon from "../components/Icons/water-icon"
-import RockIcon from "../components/Icons/rock-icon"
-import HouseIcon from "../components/Icons/house-icon"
-import GrassIcon from "../components/Icons/grass-icon"
+import WaterIcon from "../icons/water-icon"
+import RockIcon from "../icons/rock-icon"
+import HouseIcon from "../icons/house-icon"
+import GrassIcon from "../icons/grass-icon"
 
 export const arrayTransform = {
   in: (array: any[]) => {

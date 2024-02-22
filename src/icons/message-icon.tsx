@@ -1,5 +1,5 @@
 import React from "react"
-import { IconPropsType } from "../../types/icon.type"
+import { IconPropsType } from "../types/icon.type"
 
 interface MessageIconProps extends IconPropsType {
   message: () => React.ReactNode

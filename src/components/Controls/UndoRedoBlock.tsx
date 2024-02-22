@@ -1,8 +1,8 @@
 import React from "react"
-import BackIcon from "../Icons/back-icon"
+import BackIcon from "../../icons/back-icon"
 import { nextAction, previousAction } from "../../store/slices/gridSlice"
 import { useAppDispatch } from "../../hooks/useAppDispatch"
-import ForwardIcon from "../Icons/forward-icon"
+import ForwardIcon from "../../icons/forward-icon"
 
 export const UndoRedoBlock = () => {
   const dispatch = useAppDispatch()

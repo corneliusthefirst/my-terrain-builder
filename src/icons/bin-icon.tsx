@@ -1,4 +1,4 @@
-import { IconPropsType } from "../../types/icon.type"
+import { IconPropsType } from "../types/icon.type"
 
 export default function BinIcon({
   viewBox,
