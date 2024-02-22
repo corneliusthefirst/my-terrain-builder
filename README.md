@@ -19,21 +19,6 @@ Terrain Builder App complete with:
 - Start frontend :
 - Install pakages `yarn install`  then run  `yarn dev`
 
-
-# koala-test-front-js
-
-Bienvenue sur le test technique JS/TS de Koala !
-
-## Préambule
-
-Tout d’abord, tu as une semaine pour faire ce test (mais tu peux le rendre avant).
-
-Il te faudra :
-
-- Créer un repo privé sur Github
-- Envoyer une invitation sur ce repo à [@vthibault](https://github.com/vthibault), [@guillaumepn](https://github.com/guillaumepn) et [@thanhtran0302](https://github.com/thanhtran0302)
-- Une fois le test terminé : nous envoyer un mail à <guillaume@neteck-fr.com> et <thanh@neteck-fr.com>
-
 ## Présentation
 
 Le but est de créer une petite application de "terrain builder" fonctionnant uniquement côté client (pas besoin de base de données / d’API), une interface 2D où tu peux placer des éléments (rocher, eau, maison) sur une grille.
@@ -64,19 +49,4 @@ Les coûts et restrictions sont les suivants :
   Précédent
 - Tous les petits “plus” visuels sont les bienvenus : toaster d’erreur si tu n’as pas le
   budget pour placer / supprimer tel bloc ; animation sur l’update du budget ; scroll
-  sur les actions de l’historique ; etc. Laisse libre cours à ton imagination
-- Une version un peu minimaliste de ce à quoi ça pourrait ressembler :
-
-![Image](readme.png)
-
-## Par où commencer
-
-Pour te familiariser avec les technos que nous utilisons chez Koala, l’app devra fonctionner avec React, Redux Toolkit et Typescript
-
-Pour te faciliter la tâche du setup, nous conseillons de partir d’une app React + Redux Toolkit (voir leur doc : <https://redux-toolkit.js.org/introduction/getting-started>)
-
-Pour t’aider sur le design, tu es libre d’installer une librairie de ton choix, comme styled-components ou Tailwind.
-
-A partir de là, à toi de gérer le fonctionnement de l’app avec les composants, actions / reducers, et structures de données qui te semblent cohérents.
-
-Bon courage !
+  sur les actions de l’historique ; etc.
