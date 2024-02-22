@@ -3,14 +3,15 @@ import UpIcon from "./Icons/up-icon"
 interface AccordionProps {
   title: string
   children: React.ReactNode
+  length: number
 }
 
-const Accordion: React.FC<AccordionProps> = ({ title, children }) => {
+const Accordion: React.FC<AccordionProps> = ({ title, children, length }) => {
   const [isOpen, setIsOpen] = useState(false)
   const accordionRef = useRef<HTMLDivElement>(null)
   const toggleAccordion = () => {
     setIsOpen(!isOpen)
-    accordionRef.current?.scrollIntoView({ behavior: "smooth", block: "end" })
+    length > 15 && accordionRef.current?.scrollIntoView({ behavior: "smooth", block: "end" })
   }
 
   return (

@@ -17,7 +17,7 @@ export const History = () => {
   }
 
   return (
-    <Accordion title="History">
+    <Accordion title="History" length={history.length}>
         <ul className={`space-y-2 animate-slideIn lg:text-left 2xs:text-center`}>
           {historyList?.map((history, index) => {
             const active = index === currentHistoryIndex
